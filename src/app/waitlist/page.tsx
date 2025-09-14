@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useState } from "react";
 import RoleSelect from "@/components/RoleSelect";
 import Button from "@/components/ui/Button";
@@ -100,9 +101,9 @@ export default function WaitlistPage() {
                 {status === "loading" ? "Joining…" : "Join waitlist"}
               </Button>
 
-              <a href="/" className="ml-auto text-sm text-white/70 hover:text-white transition flex items-center gap-1">
-                ← Back to home
-              </a>
+              <Link href="/" className="text-sm text-white/70 hover:text-white transition">
+  ← Back to home
+</Link>
 
               {status === "ok" && <span className="text-sm text-emerald-400">Thanks! We’ll be in touch.</span>}
               {status === "err" && <span className="text-sm text-rose-400">Something went wrong. Try again.</span>}

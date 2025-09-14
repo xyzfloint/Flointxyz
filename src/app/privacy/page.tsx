@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function PrivacyPage() {
   return (
     <main className="min-h-screen bg-[#0B0D10] text-white">
@@ -54,7 +55,9 @@ export default function PrivacyPage() {
 
         {/* Back */}
         <div className="mt-6">
-          <a href="/" className="text-sm text-white/70 hover:text-white">← Back to home</a>
+          <Link href="/" className="text-sm text-white/70 hover:text-white transition">
+  ← Back to home
+</Link>
         </div>
       </div>
     </main>
