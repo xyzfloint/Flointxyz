@@ -55,13 +55,22 @@ export default function FlointLanding() {
       alt="Floint logo"
       width={120}
       height={32}
-      className="h-15 w-auto"
+      className="h-20 w-auto"
       priority
     />
   </div>
-  <div className="rounded-full border border-white/15 bg-white/5 px-5 py-2 text-sm text-white/80 backdrop-blur-sm">
-    Coming&nbsp;soon
-  </div>
+  <div
+  className="
+    rounded-full border border-white/15
+    bg-gradient-to-r from-[#8B5CF6]/20 via-[#7C4DFF]/20 to-[#00E0FF]/20
+    px-5 py-2 text-sm font-medium text-white/80
+    backdrop-blur-sm
+    shadow-[0_4px_14px_rgba(0,0,0,0.15)]
+    hover:text-white transition
+  "
+>
+  Coming&nbsp;soon
+</div>
 </header>
 
       {/* HERO */}
