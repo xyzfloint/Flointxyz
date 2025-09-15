@@ -47,7 +47,10 @@ export default function TermsPage() {
 
         {/* Back */}
         <div className="mt-6">
-          <Link href="/" className="text-sm text-white/70 hover:text-white transition">
+          <Link
+  href="/"
+  className="block mt-8 text-center text-sm text-white/70 hover:text-white transition"
+>
   ← Back to home
 </Link>
         </div>

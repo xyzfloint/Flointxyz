@@ -96,18 +96,28 @@ export default function WaitlistPage() {
               />
             </div>
 
-            <div className="flex items-center gap-4 pt-2">
-              <Button type="submit" disabled={status === "loading"} className={status === "loading" ? "opacity-70" : ""}>
-                {status === "loading" ? "Joining…" : "Join waitlist"}
-              </Button>
+            <div className="flex items-center pt-2">
+  <Button
+    type="submit"
+    disabled={status === "loading"}
+    className={status === "loading" ? "opacity-70" : ""}
+  >
+    {status === "loading" ? "Joining…" : "Join waitlist"}
+  </Button>
 
-              <Link href="/" className="text-sm text-white/70 hover:text-white transition">
-  ← Back to home
-</Link>
+  <a
+    href="/"
+    className="ml-auto text-sm text-white/70 hover:text-white transition"
+  >
+    ← Back to home
+  </a>
 
-              {status === "ok" && <span className="text-sm text-emerald-400">Thanks! We’ll be in touch.</span>}
-              {status === "err" && <span className="text-sm text-rose-400">Something went wrong. Try again.</span>}
-            </div>
+  {status === "ok" && (
+    <span className="ml-4 text-sm text-emerald-400">
+      Thanks! We’ll be in touch.
+    </span>
+  )}
+</div>
           </form>
         </section>
 
