@@ -1,8 +1,9 @@
-export const dynamic = "force-dynamic";
+// src/app/api/waitlist/route.ts
+export const runtime = "edge";
 
 type WaitlistPayload = {
-  name?: string;
-  email?: string;
+  name: string;
+  email: string;
   country?: string;
   role?: string;
 };
@@ -16,22 +17,18 @@ export async function POST(req: Request) {
       return new Response("FORMSPREE_ENDPOINT is not set", { status: 500 });
     }
 
-    const res = await fetch(endpoint, {
+    const r = await fetch(endpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
-      // У Formspree на free-плане лучше не кэшировать
-      cache: "no-store",
     });
 
-    if (!res.ok) {
-      const text = await res.text();
-      return new Response(`Formspree error: ${text}`, { status: 500 });
+    if (!r.ok) {
+      const text = await r.text();
+      return new Response(text || "Upstream error", { status: 502 });
     }
-
-    return Response.json({ ok: true });
-  } catch (err) {
-    console.error(err);
-    return new Response("Unexpected server error", { status: 500 });
+    return new Response("OK", { status: 200 });
+  } catch (e) {
+    return new Response("Bad Request", { status: 400 });
   }
 }

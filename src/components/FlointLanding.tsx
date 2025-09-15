@@ -48,8 +48,6 @@ export default function FlointLanding() {
       </div>
 
       {/* NAV */}
-      import Image from "next/image";
-// ...
 <header className="relative z-10 flex items-center justify-between px-6 md:px-10 py-6">
   <div className="flex items-center gap-3">
     <Image
@@ -57,7 +55,7 @@ export default function FlointLanding() {
       alt="Floint logo"
       width={120}
       height={32}
-      className="h-8 w-auto"
+      className="h-15 w-auto"
       priority
     />
   </div>
@@ -94,14 +92,14 @@ export default function FlointLanding() {
           >
             Join waitlist
           </Link>
-          <a
+          <Link
             href="#how"
             className="inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold
                        text-white/90 border border-white/15 bg-white/5 hover:bg-white/10
                        backdrop-blur transition"
           >
             How it works
-          </a>
+          </Link>
         </div>
 
         {/* Preview block (замени весь свой текущий блок на это) */}
