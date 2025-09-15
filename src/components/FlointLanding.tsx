@@ -55,7 +55,7 @@ export default function FlointLanding() {
       alt="Floint logo"
       width={120}
       height={32}
-      className="h-20 w-auto"
+      className="h-17 w-auto"
       priority
     />
   </div>
