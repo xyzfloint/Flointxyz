@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';   // ← добавь импорт
+import Image from "next/image";
 import { useEffect } from 'react';
 export default function FlointLanding() {
   useEffect(() => {
@@ -47,22 +48,20 @@ export default function FlointLanding() {
       </div>
 
       {/* NAV */}
-      <header className="relative z-10 flex items-center justify-between px-6 md:px-10 py-6">
+      import Image from "next/image";
+// ...
+<header className="relative z-10 flex items-center justify-between px-6 md:px-10 py-6">
   <div className="flex items-center gap-3">
-    <img
-      src="/logo2.png"   // имя файла из public
+    <Image
+      src="/logo2.png"
       alt="Floint logo"
-      className="h-18 w-auto"
+      width={120}
+      height={32}
+      className="h-8 w-auto"
+      priority
     />
   </div>
-        {/* Новый бейдж справа */}
-  <div
-    className="rounded-full border border-white/15 bg-gradient-to-r
-               from-[#8B5CF6]/20 via-[#7C4DFF]/20 to-[#00E0FF]/20
-               px-5 py-2 text-sm font-medium text-white/80
-               backdrop-blur-sm shadow-[0_4px_14px_rgba(0,0,0,0.15)]
-               hover:text-white transition"
-  >
+  <div className="rounded-full border border-white/15 bg-white/5 px-5 py-2 text-sm text-white/80 backdrop-blur-sm">
     Coming&nbsp;soon
   </div>
 </header>

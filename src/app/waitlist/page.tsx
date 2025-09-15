@@ -105,12 +105,12 @@ export default function WaitlistPage() {
     {status === "loading" ? "Joining…" : "Join waitlist"}
   </Button>
 
-  <a
+  <Link
     href="/"
     className="ml-auto text-sm text-white/70 hover:text-white transition"
   >
     ← Back to home
-  </a>
+  </Link>
 
   {status === "ok" && (
     <span className="ml-4 text-sm text-emerald-400">

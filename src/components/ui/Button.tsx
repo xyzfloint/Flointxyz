@@ -1,17 +1,20 @@
-"use client";
+// src/components/ui/Button.tsx
 import React from "react";
 
 type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  asLink?: boolean;
+  className?: string;
 };
 
-export default function Button({ className = "", asLink, ...props }: Props) {
-  const base =
-    "inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold transition-all";
-  const visual =
-    "bg-[linear-gradient(135deg,#7C3AED_0%,#8B5CF6_50%,#22D3EE_100%)] text-white shadow-[0_10px_30px_rgba(124,58,237,.35)] hover:brightness-110 active:translate-y-[1px]";
-  const ring = "focus:outline-none focus:ring-2 focus:ring-cyan-300/60";
+export default function Button({ className = "", ...props }: Props) {
   return (
-    <button {...props} className={[base, visual, ring, className].join(" ")} />
+    <button
+      {...props}
+      className={
+        "inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold " +
+        "text-[#0B0D10] bg-gradient-to-r from-[#8B5CF6] via-[#7C4DFF] to-[#00E0FF] " +
+        "shadow-[0_6px_20px_rgba(139,92,246,0.35)] hover:opacity-95 transition " +
+        className
+      }
+    />
   );
 }
